@@ -1,0 +1,75 @@
+
+
+<table border=0>
+	<tr height='60'>
+		<td><img src='http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/cabecera.jpg' width='630' height='60'></td>
+	</tr>
+	<tr height='100'>
+		<td><img src='http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/logolateral.jpg' width='150' height='100'></td>
+		<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD>
+		<td><img src='http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/filven6.jpg' width='110' height='100'></td>
+	</tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Nº. Entrega:</TD><TD><strong>NE2012030126</strong></TD>
+		<TD>Fecha: <strong>06/03/2012</strong></TD></tr>
+	<tr><TD>Nº. Pedido:</TD><TD colspan='4'><strong>PE2012030157</strong></TD></tr>
+	<tr><TD>Vendedor:</TD><TD colspan='4'><strong>DISTRIBUIDORA</strong></TD></tr>
+	<tr><TD>Cliente:</TD><TD colspan='7'><strong>0398 - FUNDACION LIBRERIAS DEL SUR/FERIAS NACIONALES</strong></TD></tr>
+	<tr><TD>Dirección:</TD><TD colspan='7'><strong>CALLE HIPICA,CRUCE CON LA GUAIRITA,EDIF.  FUNDACION LIBRERIAS DEL SUR, LAS MERCEDES-CARACAS.</strong></TD></tr>
+	<tr><TD>R.I.F.:</TD><TD><strong>G200079959</strong></TD>
+		<TD colspan='6'>Telefono: <strong>02129926619</strong></TD></tr>
+	<tr><TD>Contacto:</TD><TD><strong>Gabriel Figueredo</strong></TD>
+		<TD colspan='6'>Transacción: <strong>CONSIGNACION</strong></TD></tr>
+	<tr><TD colspan='3'>Forma de Pago: <strong>Consignacion</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Observaciones:</TD><TD colspan='7'><strong>GABRIEL CARRASCO</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr bgcolor='#eeeeee'>
+	<TD align='center' width='100'><strong><font size='2' color='#990000'>Cod. Articulo</font></strong></TD> 
+		<TD width='150'><strong><font size='2' color='#990000'>Titulo</font></strong></TD> 
+		<TD width='150'><strong><font size='2' color='#990000'>Autor</font></strong></TD>
+		<TD align='center' width='55'><strong><font size='2' color='#990000'>Num Tomo</font></strong></TD>
+		<TD align='center' width='15'><strong><font size='2' color='#990000'>P</font></strong></TD>
+		<TD align='center' width='60'><strong><font size='2' color='#990000'>Precio Unitario</font></strong></TD>
+		<TD align='center' width='35'><strong><font size='2' color='#990000'>Cant Ped</font></strong></TD>
+		<TD align='center' width='35'><strong><font size='2' color='#990000'>Cant Entr</font></strong></TD>
+		<TD align='center' width='70'><strong><font size='2' color='#990000'>Precio Exten.</font></strong></TD>
+	</tr>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555001923</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS CARRIZAL / LOS SALIAS. ESTADO MIRANDA</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555001925</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS INDEPENDENCIA / PAZ CASTILLO. ESTADO MIRANDA</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555001926</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS ANDRES BELLO / BUROZ. ESTADO MIRANDA</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555001927</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO URDANETA. ESTADO MIRANDA</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555001928</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO CRISTOBAL ROJAS. ESTADO MIRANDA</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002138</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO ANTONIO JOSE DE SUCRE. ESTADO BARINAS</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002136</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO ALBERTO ARVELO TORREALBA. ESTADO BARINAS</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002137</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO BARINAS. ESTADO BARINAS</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002135</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS AGUASAY / EZEQUIEL ZAMORA / SANTA BARBARA. ESTADO MONAGAS</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002134</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS ACOSTA / PIAR. ESTADO MONAGAS</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002133</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS ANACO / PEDRO MARIA FREITES</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002139</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIOS BOLIVAR / PETIT. ESTADO FALCON</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>1</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 5555002140</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>MUNICIPIO MAUROA. ESTADO FALCON</font></TD> <TD><font size='2'>VARIOS AUTORES                                              </font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>R</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>20.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>2</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>2</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>40.00</font></TD>
+	
+	<tr><TD></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>Total:</TD><TD align='center'><strong>14</strong></TD>
+																	<TD align='center'><strong>14</strong></TD>
+																	<TD align='center'><strong>280,00</strong></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>% Desc:</TD><TD></TD><TD></TD><TD align='center'><strong>0,00</strong></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>Total General:</TD><TD></TD><TD></TD><TD align='center'><strong>280,00</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Recibido:</TD><TD align='left' colspan='2'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'><strong>JULIO CONTRERAS</strong></TD>
+		<TD align='left' colspan='5'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>Autorizado: <strong>DIANA BLANCO</strong></TD></tr>
+	<tr><TD align='left' colspan='8'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>Observaciones: <strong>EDITORIAL GABRIEL CARRASCOFILVEN-2012</strong></TD></tr>
+	</table>

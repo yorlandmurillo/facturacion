@@ -1,0 +1,126 @@
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+<div id="menu">
+	<ul id="nav">     
+	<li><a href="#">Mantenimiento</a>         
+		<ul>             
+			<li><a href="inventario.php?p=usuarios">Usuarios</a></li>
+			<li><a href="inventario.php?p=libros">Libros</a></li>
+			<li><a href="inventario.php?p=proveedor">Editoriales</a></li>
+			<li><a href="inventario.php?p=cliente">Librerias</a></li>
+			<li><a href="inventario.php?p=autor">Autores</a></li>
+			<li><a href="inventario.php?p=transaccion">Transacciones</a></li>
+			<li><a href="inventario.php?p=empaque">Embalaje</a></li>
+			<li><a href="inventario.php?p=ubicacion">Almacen</a></li>
+			<li><a href="inventario.php?p=vendedor">Vendedores</a></li>      
+		</ul>     
+	</li>
+	 <li><a href="#">Operativo</a>
+	 	<ul>             
+			<li><a href="inventario.php?p=inventario">Inventario</a></li>
+			<li><a href="inventario.php?p=compra">Orden de Compra</a></li>
+			<li><a href="inventario.php?p=recepcion">Informe de Recepción</a></li>
+			<li><a href="inventario.php?p=pedido">Pedido</a></li>
+			<li><a href="inventario.php?p=nota_entrega">Nota de Entrega</a></li>    
+			<li><a href="inventario.php?p=factura">Facturar</a></li>
+			<li><a href="inventario.php?p=reimpresion">Reimpresión</a></li>			
+		</ul>     
+	 </li>
+     <li><a href="#">Consulta</a>
+	   <ul>             
+	     	 <li><a href="#">Orden de Compra</a>
+             	<ul>
+					<li><a href="inventario.php?p=cocxnor">Numero de Orden</a></li>
+					<li><a href="#">Fecha</a></li>
+                    <li><a href="#">Proveedor</a></li>
+				</ul>
+             </li>
+		     <li><a href="#">Informe Recepción</a>
+             	<ul>
+					<li><a href="#">Numero de Orden</a></li>
+                    <li><a href="#">Numero de Informe</a></li>
+					<li><a href="#">Fecha</a></li>
+                    <li><a href="#">Proveedor</a></li>
+				</ul>
+             </li>   
+		     <li><a href="#">Solicitud Pedido</a>
+             	<ul>
+					<li><a href="#">Numero de Pedido</a></li>
+					<li><a href="#">Fecha</a></li>
+                    <li><a href="#">Cliente</a></li>
+				</ul>
+             </li>   
+		     <li><a href="#">Nota de Entrega</a>
+             	<ul>
+					<li><a href="#">Numero de Pedido</a></li>
+                    <li><a href="#">Numero de Nota</a></li>
+					<li><a href="#">Fecha</a></li>
+                    <li><a href="#">Cliente</a></li>
+				</ul>
+             </li>   
+       </ul>
+     </li>
+		 <li><a href="#">Reportes</a>
+		<ul>
+			<li><a href="#">Libros Entregados</a>
+				<ul>
+					<li><a href="inventario.php?p=libentpclifch">Cliente y Fecha</a></li>
+					<li><a href="inventario.php?p=libentpclirfch">Clien. y Rango de Fchs</a></li>
+					<li><a href="inventario.php?p=libentpprovfch">Proveedor y Fecha</a></li>
+					<li><a href="inventario.php?p=libentpprovrfch">Prov. y Rango de Fchs</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Existencia</a>
+				<ul>
+					<li><a href="inventario.php?p=rexistxcod">Código</a></li>
+					<li><a href="inventario.php?p=rexistxedit">Editorial</a></li>
+					<li><a href="inventario.php?p=rexistxplat">Plataforma</a></li>
+					<li><a href="inventario.php?p=rexistxplatmr">Plataforma MR</a></li>
+					<li><a href="inventario.php?p=rexistxrcod">Rango de Código</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Precio</a>
+				<ul>
+					<li><a href="inventario.php?p=rprecxcod">Código</a></li>
+					<li><a href="inventario.php?p=rprecxedit">Editorial</a></li>
+					<li><a href="inventario.php?p=rprecxplat">Plataforma</a></li>
+					<li><a href="inventario.php?p=rprecxplatmr">Plataforma MR</a></li>
+					<li><a href="inventario.php?p=rprecxrcod">Rango de Código</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Mov. de Entrada</a>
+				<ul>
+					<li><a href="inventario.php?p=moveinvpcod">Código</a></li>
+					<li><a href="inventario.php?p=moveinvpfch">Fecha</a></li>
+					<li><a href="inventario.php?p=moveinvprcod">Rango de Código</a></li>
+					<li><a href="inventario.php?p=moveinvprfch">Rango de Fecha</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Mov. de Salida</a>
+				<ul>
+					<li><a href="inventario.php?p=movsinvpcod">Código</a></li>
+					<li><a href="inventario.php?p=movsinvpfch">Fecha</a></li>
+					<li><a href="inventario.php?p=movsinvprcod">Rango de Código</a></li>
+					<li><a href="inventario.php?p=movsinvprfch">Rango de Fecha</a></li>
+			  </ul>
+			</li>
+			<li><a href="inventario.php?p=listadolibros">Listado General de Títulos del Sistema</a></li>
+		</ul>
+	</li>
+    <li><a href="salida.php">Salida</a>
+    </ul>
+</div>

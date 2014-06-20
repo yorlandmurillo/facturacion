@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Version=1.0
+Type=Link
+URL=http://localhost/factura_expoventa
+Name=facturacion de ferias y expoventas
+Icon=/usr/share/pixmaps/firefox.png
+Name[es_VE]=facturacion de ferias y expoventas

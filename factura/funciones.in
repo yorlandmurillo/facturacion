@@ -1,0 +1,176 @@
+<?php
+	function fechayhora(){
+		$f=getdate();
+		if($f[mday]<10) $cadena.="Fecha: 0".$f[mday]."-";
+		else $cadena.="Fecha: ".$f[mday]."-";
+		if($f[mon]<10) $cadena.="0".$f[mon]."-".$f[year]."\tHora: ";
+		else $cadena.=$f[mon]."-".$f[year]."\tHora: ";
+		if($f[hours]<10) $cadena.="0".$f[hours].":";
+		else $cadena.=$f[hours].":";
+		if($f[minutes]<10) $cadena.="0".$f[minutes].":";
+		else $cadena.=$f[minutes].":";
+		if($f[seconds]<10) $cadena.="0".$f[seconds];
+		else $cadena.=$f[seconds];
+		return $cadena;
+	}
+	function ip($cad){
+		// codigo que muestra la IP local, IP pública y la IP del proxy 
+		if($_SERVER["HTTP_X_FORWARDED_FOR"]){	
+			if($pos=strpos($_SERVER["HTTP_X_FORWARDED_FOR"]," ")){	
+				$ipl=substr($_SERVER["HTTP_X_FORWARDED_FOR"],0,$pos);
+				$ipp=substr($_SERVER["HTTP_X_FORWARDED_FOR"],$pos+1);
+			}else $ipp=$_SERVER["HTTP_X_FORWARDED_FOR"];
+			if($_SERVER["REMOTE_ADDR"])
+				$proxy=$_SERVER["REMOTE_ADDR"];
+		}else $ipp=$_SERVER["REMOTE_ADDR"];
+		if($cad=="ipp") return $ipp;
+		if($cad=="ipl") return $ipl;
+		else return $proxy;
+	}
+	function comparar($fv,$fa,$tipo=0){
+		if ($tipo==0){
+			$dv=$fv[0].$fv[1];
+			$mv=$fv[3].$fv[4];
+			$av=$fv[6].$fv[7].$fv[8].$fv[9];
+			$da=$fa[0].$fa[1];
+			$ma=$fa[3].$fa[4];
+			$aa=$fa[6].$fa[7].$fa[8].$fa[9];
+		}else{
+			$dv=$fv[8].$fv[9];
+			$mv=$fv[5].$fv[6];
+			$av=$fv[0].$fv[1].$fv[2].$fv[3];
+			$da=$fa[8].$fa[9];
+			$ma=$fa[5].$fa[6];
+			$aa=$fa[0].$fa[1].$fa[2].$fa[3];
+		}
+		// si el resultado es 1 no esta vencido, si esta vencido devuelve 0
+		if($av>$aa) return 1;
+		elseif($av<$aa) return 0;
+		else{
+			if($mv>$ma) return 1;
+			elseif($mv<$ma) return 0;
+			else{
+				if($dv>=$da) return 1;
+				elseif($dv<$da) return 0;
+			}
+		}
+	}
+	function mensaje($m){
+		echo ('<script languaje='.'"javascript"'.'>');
+		echo ("alert('".$m."')");
+		echo ('</script>');
+	    
+	}
+	function mensajeval($m){
+		echo ('<script languaje='.'"javascript"'.'>');
+		echo ("alert('".$m."')");
+		echo ('</script>');
+		echo ('<script languaje='.'"javascript"'.'>');
+		echo ("history.go(-1)");
+		echo ('</script>');
+	}
+
+	function fecha($tipo) {
+	   	$date = getDate();
+   		foreach($date as $item=>$value) {
+       		if ($value < 10)
+           		$date[$item] = "0".$value;
+	   	}
+   		if($tipo==1) return $date['mday']."-".$date['mon']."-".$date['year'];
+		elseif($tipo==5) return $date['year']."-".$date['mon']."-".$date['mday'];
+		else return $date;
+	} 
+//posicionarse en una cadena despues de un espacio.
+	function posicionar($cadena,$abuscar){
+		$sal=0;
+		$cad=ltrim($cadena);
+		$a=ltrim($abuscar);
+		for($i=0;($i<(strlen($cad)-1))&&($sal==0);$i++){
+			if(substr($cad,$i,strlen($a))==$a)
+				$sal=1;
+		}
+		if($sal==1) return $i+strlen($a);//posiciona justo despues de lo que se busca
+		else return 0;		
+	}
+// buscar si en una cadena existe una subcadena y cuantas veces existe.
+
+    function buscaren($cadena,$subcadena){
+   		$cad=strtoupper($cadena);
+		$scad=strtoupper($subcadena);
+		return substr_count($cad,$scad);
+    }
+	function acomodarfecha($dia,$mes,$año){
+		$cadena=$año;
+		if(($mes<10)&&(strlen($mes)<2)) $cadena.="-0".$mes;
+		else $cadena.="-".$mes;
+		if(($dia<10)&&(strlen($dia)<2)) $cadena.="-0".$dia;
+		else $cadena.="-".$dia;
+		return $cadena;
+	}
+//esta funcion va a permitir obtener el navegador que se esta utilizando
+function UserBrowser(){
+if((ereg("Nav", $_SERVER["HTTP_USER_AGENT"])) || (ereg("Gold",
+$_SERVER["HTTP_USER_AGENT"])) || (ereg("X11",
+$_SERVER["HTTP_USER_AGENT"])) || (ereg("Mozilla",
+$_SERVER["HTTP_USER_AGENT"])) || (ereg("Netscape",
+$_SERVER["HTTP_USER_AGENT"])) AND (!ereg("MSIE",
+$_SERVER["HTTP_USER_AGENT"]) AND (!ereg("Konqueror",
+$_SERVER["HTTP_USER_AGENT"])))) $browser = "Netscape";
+  elseif(ereg("MSIE", $_SERVER["HTTP_USER_AGENT"])) $browser = "MSIE";
+  elseif(ereg("Lynx", $_SERVER["HTTP_USER_AGENT"])) $browser = "Lynx";
+  elseif(ereg("Opera", $_SERVER["HTTP_USER_AGENT"])) $browser = "Opera";
+  elseif(ereg("Netscape", $_SERVER["HTTP_USER_AGENT"])) $browser = "Netscape";
+  elseif(ereg("Konqueror", $_SERVER["HTTP_USER_AGENT"])) $browser = "Konqueror";
+  elseif((eregi("bot", $_SERVER["HTTP_USER_AGENT"])) ||
+  (ereg("Google", $_SERVER["HTTP_USER_AGENT"])) || (ereg("Slurp",
+  $_SERVER["HTTP_USER_AGENT"])) || (ereg("Scooter",
+  $_SERVER["HTTP_USER_AGENT"])) || (eregi("Spider",
+  $_SERVER["HTTP_USER_AGENT"])) || (eregi("Infoseek",
+  $_SERVER["HTTP_USER_AGENT"]))) $browser = "Bot";
+  else $browser = "Other";
+  return $browser;
+  } 
+  //funcion de año bisciesto
+function bisciesto($año){
+	$bis=2000;
+	if($año>$bis)
+ 	  while($año>$bis){
+		$año-=4;
+	  }
+	 elseif($año<$bis)
+	  	while($año<$bis){
+		  $año+=4;
+	    }
+	if($año==$bis)
+		return 1;
+	else return 0;
+}
+//funcion que permite obtener un dia valido retorna 1 si es valido 0 si no lo es
+function validardia($dia,$mes,$año){
+	if(bisciesto($año)==1)
+		$meses=array(31,29,31,30,31,30,31,31,30,31,30,31);
+	else
+		$meses=array(31,28,31,30,31,30,31,31,30,31,30,31);
+	if($dia>$meses[$mes-1])
+		return 0;
+	else return 1;
+}
+//funcion que permite encriptar la clave de los administradores
+
+function encriptar($clave)
+{
+    $uno = strrev($clave);
+	$dos = $clave;
+	$tre = $uno.$dos;
+	$cua = $uno.$tre;
+	$cin = $cua.$uno;
+    $sei = $tre.$tre;
+	$sie = $uno.$tre.$uno.$dos;
+    $md1 = md5($sie.$dos.md5($uno.md5($sie.strrev($sie)).$con));
+    $md2 = md5($md1.md5($tre.$uno.$cua.md5($md1.$sei)));
+    $md3 = md5($md2.md5($md1));
+    $md4 = md5($md3.$md2.md5($sie).$md1);
+    return $md2.$md1.$md4.md5($md3.$md2.$md1);
+}
+
+?>

@@ -1,0 +1,893 @@
+// JavaScript Document
+
+function objetoAjax(){
+	var xmlhttp=false;
+	try {
+		xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch (e) {
+		try {
+		   xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch (E) {
+			xmlhttp = false;
+  		}
+	}
+	if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+		xmlhttp = new XMLHttpRequest();
+	}
+	return xmlhttp;
+}
+
+
+function ventana(ventana,nombre){
+	var buscar
+   buscar=window.open(ventana,nombre,'width=600,height=400,top='+((screen.height/2)-(180.5))+',left='+((screen.width/2)-(310.5))+',toolbar=no,scrollbars=yes,resizable=no,menubar=no,status=no,directories=no,location=no')
+
+}
+
+
+function validarcodfacturamanual(codfacturamanual)
+{
+	var factura=codfacturamanual.value;
+	if(factura.length <6)
+	{
+		alert("Codigo de factura manual muy corto");
+	}
+	else
+	{
+		ajax=objetoAjax();
+		ajax.open("POST","validarcodfacturamanual.php",true);
+		ajax.onreadystatechange=function() {
+			if (ajax.readyState==4) {
+				if(ajax.responseText!=0)
+				{
+					//mostrar resultados en esta capa
+					alert(ajax.responseText);
+					cancela_factura();
+				}
+			}
+		}
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		ajax.send("codfacturamanual="+codfacturamanual.value);
+	}
+}
+
+
+function agregaritem(){
+	//donde se mostrará lo resultados
+//	divResultado = document.getElementById('resultado');
+	//valores de los inputs
+	codp=document.ventas.codproducto.value;
+	codf=document.ventas.codfactura.value;
+	cant=document.ventas.cantidad.value;
+	vend=document.ventas.vendedor.value;
+	suc=document.ventas.sucursal.value;
+
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medotod POST
+	//archivo que realizará la operacion
+	//registro.php
+	if(codp!=""){
+	ajax.open("POST","agregaritem.php",true);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			//mostrar resultados en esta capa
+			if(ajax.responseText !=1 && ajax.responseText.substring(2,3)!=2)
+				alert(ajax.responseText);
+			
+			if(ajax.responseText.substring(2,3)==2)
+			{
+				var codigob=ajax.responseText.substring(3,ajax.responseText.length);
+				ventana('consultas/titulos.php?buscar='+codigob,'9789801420453');
+			}
+			
+			//llamar a funcion para limpiar los inputs
+			llamarasincrono('consulta.php','contenidos');	
+			LimpiarCampos();
+			refres();
+		}
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	//enviando los valores
+	ajax.send("codp="+codp+"&codf="+codf+"&cant="+cant+"&suc="+suc+"&vend="+vend)
+
+//	LimpiarCampos();
+	}else alert("Ingrese un código valido");
+}
+
+function llamarasincrono (url, id_contenedor)
+{
+    var pagina_requerida = false;
+    if (window.XMLHttpRequest)
+    {
+        // Si es Mozilla, Safari etc
+        pagina_requerida = new XMLHttpRequest ();
+    } else if (window.ActiveXObject)
+    {
+        // pero si es IE
+        try 
+        {
+            pagina_requerida = new ActiveXObject ("Msxml2.XMLHTTP");
+        }
+        catch (e)
+        {
+            // en caso que sea una versión antigua
+            try
+            {
+                pagina_requerida = new ActiveXObject ("Microsoft.XMLHTTP");
+            }
+            catch (e)
+            {
+            }
+        }
+    } 
+    else
+    return false;
+    pagina_requerida.onreadystatechange = function ()
+    {
+        // función de respuesta
+        cargarpagina (pagina_requerida, id_contenedor);
+    }
+    pagina_requerida.open ('GET', url, true); // asignamos los métodos open y send
+    pagina_requerida.send (null);
+	window.location.reload(this);
+	
+	
+}
+// todo es correcto y ha llegado el momento de poner la información requerida
+// en su sitio en la pagina xhtml
+function cargarpagina (pagina_requerida, id_contenedor)
+{
+    if (pagina_requerida.readyState == 4 && (pagina_requerida.status == 200 || window.location.href.indexOf ("http") == - 1))
+    document.getElementById (id_contenedor).innerHTML = pagina_requerida.responseText;
+}
+
+
+function LimpiarCampos(){
+	document.ventas.cantidad.value=1;
+	document.ventas.codproducto.value="";
+	document.ventas.codproducto.focus();
+}
+
+function iSubmitEnter(oEvento, oFormulario){
+     var iAscii;
+	 cliente=document.ventas.cliente.value;
+     if (oEvento.keyCode)
+         iAscii = oEvento.keyCode;
+     else if (oEvento.which)
+         iAscii = oEvento.which;
+     else
+         return false;
+
+     if (iAscii == 13 & cliente!=""){ 
+	 agregaritem();
+	 LimpiarCampos();
+     llamarasincrono('consulta.php','contenidos');	
+}
+return true;
+} 
+
+function refres(){
+   location.reload(true);
+}
+
+function additem(){
+	 agregaritem();
+	 LimpiarCampos();
+     llamarasincrono('consulta.php','contenidos');	
+}
+
+
+function borraritem(iditem,cod,cant,suc){
+//alert("codp="+iditem+"&cod="+cod+"&cant="+cant+"&suc="+suc);
+	divResultado = document.getElementById('contenidos');
+	//usaremos un cuadro de confirmacion	
+	var eliminar = confirm("De verdad desea eliminar este dato?")
+	if ( eliminar ) {
+		//instanciamos el objetoAjax
+		ajax=objetoAjax();
+		//uso del medotod POST
+		//indicamos el archivo que realizará el proceso de eliminación
+		ajax.open("POST", "borraritem.php",true);
+		divResultado.innerHTML= '<img src="imagenes/cancelar.png">';
+		ajax.onreadystatechange=function() {
+			if (ajax.readyState==4) {
+				//mostrar resultados en esta capa
+				divResultado.innerHTML = ajax.responseText
+				llamarasincrono('consulta.php','contenidos');	
+				location.reload();
+			}
+		}
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		//como hacemos uso del metodo POST
+		ajax.send("codp="+iditem+"&cod="+cod+"&cant="+cant+"&suc="+suc)
+	}
+    llamarasincrono('consulta.php','contenidos');	
+
+}
+
+function cancelaritems(){
+//alert("Estoy en cancelaritems");
+
+	//donde se mostrará lo resultados
+	divResultado = document.getElementById('contenidos');
+	//valores de los inputs
+	cod=document.ventas.codfactura.value;
+	vend=document.ventas.vendedor.value;
+	suc=document.ventas.sucursal.value;
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medotod POST
+	//archivo que realizará la operacion
+	//registro.php
+	ajax.open("POST","borraritem.php",true);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			//mostrar resultados en esta capa
+			//divResultado.innerHTML = ajax.responseText
+			//llamar a funcion para limpiar los inputs
+		}
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	//enviando los valores
+	ajax.send("codf="+cod+"&vend="+vend+"&suc="+suc)
+	//LimpiarCampos();
+}
+
+function verfactura(codf,suc,vend) {
+	window.location.href="funciones/printfactura.php?codf="+codf+"&vend="+vend+"&suc="+suc;
+	
+}
+
+
+function cancela_factura() {
+//alert("Le di a cancelar facturas");
+	cancelaritems();
+	LimpiarCampos();
+	llamarasincrono('consulta.php','contenidos');	
+	window.close(ventas);
+}
+
+function salir() {
+	cancelaritems();
+	LimpiarCampos();
+    llamarasincrono('consulta.php','contenidos');	
+//	window.location ="index.php"; 
+}
+
+function aceptarfactura(){
+	//donde se mostrará lo resultados
+	divResultado = document.getElementById('resultado');
+	//valores de los inputs
+	codf=document.ventas.codfactura.value;
+	cliente=document.ventas.cliente.value;
+	vend=document.ventas.vendedor.value;
+	total=document.ventas.totalcancelar1.value;
+	subt=document.ventas.subtotal1.value;
+	mtoiva=document.ventas.mtoiva.value;
+	iva=document.ventas.porcentajeiva.value;	
+	suc=document.ventas.sucursal.value;
+	tipofactura=document.ventas.tipofactura.value;
+	fecfacturamanual=document.ventas.fecfacturamanual.value;
+	codfacturamanual=document.ventas.codfacturamanual.value;
+	ncontrol=document.ventas.ncontrol.value;
+
+	
+	if(document.ventas.montoefectivo.value=="")efec=0;
+	else efec=parseFloat(document.ventas.montoefectivo.value);
+	
+	if(document.ventas.montotdb.value=="")tdb=0;
+	else tdb=parseFloat(document.ventas.montotdb.value);
+
+	if(document.ventas.montotdc.value=="")tdc=0;
+	else tdc=parseFloat(document.ventas.montotdc.value);
+
+	if(document.ventas.montobl.value=="")bl=0;
+	else bl=parseFloat(document.ventas.montobl.value);
+
+	if(document.ventas.montoesp.value=="")esp=0;
+	else esp=parseFloat(document.ventas.montoesp.value);
+
+	if(document.ventas.montocheque.value=="")mtocheque=0;
+	else mtocheque=parseFloat(document.ventas.montocheque.value);
+
+	if(document.ventas.otromonto.value=="")omonto=0;
+	else omoneda=parseFloat(document.ventas.otromonto.value);
+
+	if(document.ventas.cestaticket.value=="")cesta=0;
+	else cesta=parseFloat(document.ventas.cestaticket.value);
+
+	if(document.ventas.nrocheque.value=="")nrocheque=0;
+	else nrocheque=document.ventas.nrocheque.value;
+
+	if(document.ventas.nrocuenta.value=="")nrocta=0;
+	else nrocta=document.ventas.nrocuenta.value;
+
+	if(document.ventas.bancos.value=="")banco=0;
+	else banco=document.ventas.bancos.value;
+
+	if(document.ventas.nroconformacion.value=="")nroconf=0;
+	else nroconf=document.ventas.nroconformacion.value;
+
+	totalp=eval(efec+tdb+tdc+bl+esp+mtocheque+omoneda+cesta);
+
+	cambio=totalp-total;
+
+	if(total==0){alert("La Factura esta en Cero");}
+		
+	msg=confirm("Va a procesar una factura ¿Esta Seguro?");
+	if(msg & total>0)
+	{
+	
+		if(fecfacturamanual!="" & codfacturamanual!="" & ncontrol!="")
+		{
+			if(efec > 0 || tdb > 0 || tdc > 0 || bl > 0 || mtocheque > 0 || esp > 0 || omoneda > 0 || cesta > 0)
+			{
+				if(totalp>total || totalp==total)
+				{
+					//instanciamos el objetoAjax
+					ajax=objetoAjax();
+					//uso del medotod POST
+					//archivo que realizará la operacion
+					//registro.php
+					ajax.open("POST","funciones/crearfactura.php",true);
+
+					ajax.onreadystatechange=function() 
+					{
+						if (ajax.readyState==4) {
+							//mostrar resultados en esta capa
+							divResultado.innerHTML = ajax.responseText
+							//llamar a funcion para limpiar los inputs
+							verfactura(codf,suc,vend);
+						}
+					}
+					ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+					//enviando los valores
+					ajax.send("codf="+codf+"&cliente="+cliente+"&vend="+vend+"&total="+total+"&subt="+subt+"&mtoiva="+mtoiva+"&iva="+iva+"&efec="+efec+"&tdb="+tdb+"&tdc="+tdc+"&bl="+bl+"&esp="+esp+"&mtocheque="+mtocheque+"&nrocheque="+nrocheque+"&nrocta="+nrocta+"&banco="+banco+"&nroconf="+nroconf+"&suc="+suc+"&omoneda="+omoneda+"&cesta="+cesta+"&cambio="+cambio+"&tipofactura="+tipofactura+"&fecfacturamanual="+fecfacturamanual+"&codfacturamanual="+codfacturamanual+"&ncontrol="+ncontrol)
+				}else alert("Debe cancelar el monto total de la factura");
+			}else alert("No ha especificado una forma de pago");
+		}else alert("Faltan campos de la factura manual");
+	}
+}
+
+
+function cerrardia(){
+	//donde se mostrará lo resultados
+   	msg=confirm("¿Esta seguro de procesar el cierre de ventas?");
+	
+	if(msg){
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medoto GET
+	//indicamos el archivo que realizará el proceso de paginar
+	//junto con un valor que representa el nro de pagina
+	ajax.open("GET", "funciones/cerrardia.php");
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			//mostrar resultados en esta capa
+			alert(ajax.responseText);
+		}
+	}
+	//como hacemos uso del metodo GET
+	//colocamos null ya que enviamos 
+	//el valor por la url ?pag=nropagina
+	ajax.send(null)
+
+//window.location.href="funciones/cerrardia.php";
+	}
+
+}
+
+function cerrarsesion(){
+	//donde se mostrará lo resultados
+   	msg=confirm("¿Esta seguro de procesar el cierre de ventas?");
+	
+	if(msg){
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medoto GET
+	//indicamos el archivo que realizará el proceso de paginar
+	//junto con un valor que representa el nro de pagina
+	ajax.open("GET", "funciones/cerrardia.php");
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			//mostrar resultados en esta capa
+			alert(ajax.responseText);
+		}
+	}
+	//como hacemos uso del metodo GET
+	//colocamos null ya que enviamos 
+	//el valor por la url ?pag=nropagina
+	ajax.send(null)
+
+//window.location.href="funciones/cerrardia.php";
+	}
+
+}
+
+function subirtraslados(){
+	//donde se mostrará lo resultados
+   	divResultado=document.getElementById('progreso');
+	msg=confirm("¿Esta seguro de cargar los traslados verificados?");
+	
+	if(msg){
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medoto GET
+	//indicamos el archivo que realizará el proceso de paginar
+	//junto con un valor que representa el nro de pagina
+	ajax.open("GET", "traslados/cargartraslados.php");
+	ajax.onreadystatechange=function() {
+		
+		if(ajax.readyState==1){
+                divResultado.innerHTML = "Cargando Traslados Por favor espere...";
+                        //modificamos el estilo de la div, mostrando una imagen de fondo
+                
+				divResultado.style.background = "url('imagenes/index2_r13_c10.gif') repeat-x"; 
+                
+				}else if(ajax.readyState==4){
+                        if(ajax.status==200){
+                                //mostramos los datos dentro de la div
+                    
+                  //              divResultado.style.background = "url('') no-repeat";
+		                        divResultado.innerHTML = "";
+                                alert(ajax.responseText);
+					}else if(ajax.status==404){
+                                divResultado.innerHTML = "La página no existe";
+                        }else{
+                                //mostramos el posible error
+                                divResultado.innerHTML = "Error:".ajax.status; 
+                        }
+       			}
+			
+	}
+	ajax.send(null)
+	}
+
+}
+
+
+
+function subirarchivos()
+{
+	//donde se mostrará lo resultados
+   	divResultado=document.getElementById('progreso');
+	
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medoto GET
+	//indicamos el archivo que realizará el proceso de paginar
+	//junto con un valor que representa el nro de pagina
+	ajax.open("GET", "operaciones/crearenvio.php");
+	ajax.onreadystatechange=function() {
+		
+		if(ajax.readyState==1){
+                divResultado.innerHTML = "Enviando data al servidor por favor no cierre la aplicación...";
+                        //modificamos el estilo de la div, mostrando una imagen de fondo
+                
+				divResultado.style.background = "url('imagenes/index2_r13_c10.gif') repeat-x"; 
+                
+				}else if(ajax.readyState==4){
+                        if(ajax.status==200){
+                                //mostramos los datos dentro de la div
+                    
+				                //divResultado.style.background = "url('') no-repeat";
+		                        recarga();
+								divResultado.innerHTML = "";
+                                alert(ajax.responseText);
+								
+					}else if(ajax.status==404){
+                                divResultado.innerHTML = "La página no existe";
+                        }else{
+                                //mostramos el posible error
+                                divResultado.innerHTML = "Error:".ajax.status; 
+			                       alert(ajax.responseText);
+					   }
+       			}
+			
+	}
+	ajax.send(null)
+}
+
+function enviararray(){
+	//donde se mostrará lo resultados
+	divResultado = document.getElementById('contenidos');
+	//valores de los inputs
+	var form = document.getElementById("enviar");
+	var campos = form.getElementsByTagName("input");
+	var array= new Array();
+//	var nombres = array['apel'].split(",");
+	for (var i=0; i<campos.length; i++) {
+    
+//	campos[i].value; 
+	if(campos[i].name=='ci[]'){
+		
+	array['ci']=campos[i].value;
+	
+	}else if(campos[i].name=='nom[]'){
+	
+	
+	array['nom']=campos[i].value;
+	
+	}else if(campos[i].name=='apel[]'){
+	array['apel']=campos[i].value;
+
+	}
+	
+	
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	//uso del medotod POST
+	//archivo que realizará la operacion
+	//registro.php
+	ajax.open("POST","untitled3.php",true);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			//mostrar resultados en esta capa
+			divResultado.innerHTML = ajax.responseText
+			//llamar a funcion para limpiar los inputs
+		}
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	//enviando los valores
+	ajax.send("&ci="+array['ci'].split(",")+"&nom="+array['nom'].split(",")+"&apel="+array['apel'].split(","))
+	//LimpiarCampos();*/
+	}	
+	
+alert(nombres)
+}
+
+function quitarcero11(campo){
+
+
+var campos=new Array('montoefectivo','montotdb','montotdc','montobl','montoesp','otromonto','montocheque','nrocheque','nrocuenta','nroconformacion','cestaticket');
+var cad=String(campo);
+
+alert(cad);
+i=0;
+while(i<campos.length){
+if (campos[i]!=cad & document.ventas.eval(campos[i]).value==0 || document.ventas.eval(campos[i]).value==""){
+document.ventas.eval(campos[i]).value=0;
+}
+if (campos[i]==cad & document.ventas.eval(campos[i]).value==0){
+document.ventas.eval(campos[i]).value="";
+}
+i++;
+}
+}
+
+
+function redondeo2decimales(numero)
+{
+	var original=parseFloat(numero);
+	var result=Math.round(original*100)/100 ;
+	return result;
+}
+
+
+
+
+function pordefecto(campo){
+
+
+var campos=new Array('montoefectivo','montotdb','montotdc','montobl','montoesp','otromonto','montocheque','nrocheque','nrocuenta','nroconformacion','cestaticket');
+var cad=String(campo);
+
+	total=document.ventas.totalcancelar1.value;
+
+switch(cad)
+{
+    case 'montoefectivo':
+	document.ventas.montoefectivo.value=redondeo2decimales(eval(total));
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+	break;
+    case 'montotdb':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value=redondeo2decimales(eval(total));        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'montotdc':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value=redondeo2decimales(eval(total));
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'montobl':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value=redondeo2decimales(eval(total));
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'montoesp':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value=redondeo2decimales(eval(total));
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'otromonto':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value=redondeo2decimales(eval(total));
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'montocheque':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value=redondeo2decimales(eval(total));
+	document.ventas.cestaticket.value="0";
+        break;
+    case 'cestaticket':
+	document.ventas.montoefectivo.value="0";
+	document.ventas.montotdb.value="0";        
+	document.ventas.montotdc.value="0";
+	document.ventas.montobl.value="0";
+	document.ventas.montoesp.value="0";
+	document.ventas.otromonto.value="0";
+	document.ventas.montocheque.value="0";
+	document.ventas.cestaticket.value=redondeo2decimales(eval(total));
+        break;
+	default:
+        break;
+}
+
+}
+
+
+
+function quitarcero(campo)
+{
+	var campos=new Array('montoefectivo','montotdb','montotdc','montobl','montoesp','otromonto','montocheque','nrocheque','nrocuenta','nroconformacion','cestaticket');
+	var cad=String(campo);
+
+	total=document.ventas.totalcancelar1.value;
+	efec=parseFloat(document.ventas.montoefectivo.value);
+	tdb=parseFloat(document.ventas.montotdb.value);
+	tdc=parseFloat(document.ventas.montotdc.value);
+	bl=parseFloat(document.ventas.montobl.value);
+	esp=parseFloat(document.ventas.montoesp.value);
+	mtocheque=parseFloat(document.ventas.montocheque.value);
+	omoneda=parseFloat(document.ventas.otromonto.value);
+	cesta=parseFloat(document.ventas.cestaticket.value);
+
+	switch(cad)
+	{
+		case 'montoefectivo':
+			
+			if(eval(tdb+tdc+bl+esp+mtocheque+omoneda+cesta)>total)
+			{
+				document.ventas.montoefectivo.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+omoneda+cesta)>0 || eval(tdb+tdc+bl+esp+mtocheque+omoneda+cesta)==total)
+			{
+				document.ventas.montoefectivo.value=redondeo2decimales(eval(total-eval(tdb+tdc+bl+esp+mtocheque+omoneda+cesta)));
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+omoneda+cesta)==0)
+			{
+				document.ventas.montoefectivo.value=redondeo2decimales(eval(total));
+			}
+
+			break;
+		case 'montotdb':
+
+			if(eval(efec+tdc+bl+esp+mtocheque+omoneda+cesta)>total)
+			{
+				document.ventas.montotdb.value=redondeo2decimales(0);
+			}
+			else if(eval(efec+tdc+bl+esp+mtocheque+omoneda+cesta)>0 || eval(efec+tdc+bl+esp+mtocheque+omoneda+cesta)==total)
+			{
+				document.ventas.montotdb.value=redondeo2decimales(eval(total-eval(efec+tdc+bl+esp+mtocheque+omoneda+cesta)));
+			}
+			else if(eval(efec+tdc+bl+esp+mtocheque+omoneda+cesta)==0)
+			{
+				document.ventas.montotdb.value=redondeo2decimales(eval(total));
+			}
+
+			break;
+		case 'montotdc':
+
+			if(eval(tdb+efec+bl+esp+mtocheque+omoneda+cesta)>total)
+			{
+				document.ventas.montotdc.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+efec+bl+esp+mtocheque+omoneda+cesta)>0 || eval(tdb+efec+bl+esp+mtocheque+omoneda+cesta)==total)
+			{
+				document.ventas.montotdc.value=redondeo2decimales(eval(total-eval(tdb+efec+bl+esp+mtocheque+omoneda+cesta)));
+			}
+			else if(eval(tdb+efec+bl+esp+mtocheque+omoneda+cesta)==0)
+			{
+				document.ventas.montotdc.value=redondeo2decimales(eval(total));
+			}
+			break;
+		
+		case 'montobl':
+
+			if(eval(tdb+tdc+efec+esp+mtocheque+omoneda+cesta)>total)
+			{
+				document.ventas.montobl.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+efec+esp+mtocheque+omoneda+cesta)>0 || eval(tdb+tdc+efec+esp+mtocheque+omoneda+cesta)==total)
+			{
+				document.ventas.montobl.value=redondeo2decimales(eval(total-eval(tdb+tdc+efec+esp+mtocheque+omoneda+cesta)));
+			}
+			else if(eval(tdb+tdc+efec+esp+mtocheque+omoneda+cesta)==0)
+			{
+				document.ventas.montobl.value=redondeo2decimales(eval(total));
+			}
+			break;
+		case 'montoesp':
+
+			if(eval(tdb+tdc+bl+efec+mtocheque+omoneda+cesta)>total)
+			{
+				document.ventas.montoesp.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+bl+efec+mtocheque+omoneda+cesta)>0 || eval(tdb+tdc+bl+efec+mtocheque+omoneda+cesta)==total)
+			{
+				document.ventas.montoesp.value=redondeo2decimales(eval(total-eval(tdb+tdc+bl+efec+mtocheque+omoneda+cesta)));
+			}
+			else if(eval(tdb+tdc+bl+efec+mtocheque+omoneda+cesta)==0)
+			{
+				document.ventas.montoesp.value=redondeo2decimales(eval(total));
+			}
+			break;
+		case 'otromonto':
+
+			if(eval(tdb+tdc+bl+esp+mtocheque+efec+cesta)>total)
+			{
+				document.ventas.otromonto.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+efec+cesta)>0 || eval(tdb+tdc+bl+esp+mtocheque+efec+cesta)==total)
+			{
+				document.ventas.otromonto.value=redondeo2decimales(eval(total-eval(tdb+tdc+bl+esp+mtocheque+efec+cesta)));
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+efec+cesta)==0)
+			{
+				document.ventas.otromonto.value=redondeo2decimales(eval(total));
+			}
+			break;
+
+		case 'montocheque':
+
+			if(eval(tdb+tdc+bl+esp+efec+omoneda+cesta)>total)
+			{
+				document.ventas.montocheque.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+bl+esp+efec+omoneda+cesta)>0 || eval(tdb+tdc+bl+esp+efec+omoneda+cesta)==total)
+			{
+				document.ventas.montocheque.value=redondeo2decimales(eval(total-eval(tdb+tdc+bl+esp+efec+omoneda+cesta)));
+			}
+			else if(eval(tdb+tdc+bl+esp+efec+omoneda+cesta)==0)
+			{
+				document.ventas.montocheque.value=redondeo2decimales(eval(total));
+			}
+			break;
+
+		case 'cestaticket':
+
+			if(eval(tdb+tdc+bl+esp+efec+omoneda+cesta)>total)
+			{
+				document.ventas.cestaticket.value=redondeo2decimales(0);
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+omoneda+efec)>0 || eval(tdb+tdc+bl+esp+mtocheque+omoneda+efec)==total)
+			{
+				document.ventas.cestaticket.value=redondeo2decimales(eval(total-eval(tdb+tdc+bl+esp+mtocheque+omoneda+efec)));
+			}
+			else if(eval(tdb+tdc+bl+esp+mtocheque+omoneda+efec)==0)
+			{
+				document.ventas.cestaticket.value=redondeo2decimales(eval(total));
+			}
+			break;
+
+
+		default:
+
+			break;
+	}
+
+}
+
+
+function updateip(){
+//donde se mostrará lo resultados
+	
+	var tipor=3;
+	
+
+	//instanciamos el objetoAjax
+	ajax=objetoAjax();
+	
+	
+		
+	ajax.open("POST","configuracion/operaciones.php",true);
+	ajax.onreadystatechange=function(){
+
+	if(ajax.readyState==1){
+                                //modificamos el estilo de la div, mostrando una imagen de fondo
+				}else if(ajax.readyState==4){
+                        if(ajax.status==200){
+                                //mostramos los datos dentro de la div
+        
+					}else if(ajax.status==404){
+                                divResultado.innerHTML = "La página no existe";
+                        }else{
+                                //mostramos el posible error
+                                divResultado.innerHTML = "Error:".ajax.status; 
+                        }
+       			}
+
+	}
+	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	//enviando los valores
+	
+	ajax.send("&tipor="+tipor)
+//	llamarasincrono('consulta.php','contenidos');	
+	
+
+}
+
+
+
+function actualizarpvp(iditem,cod,cant,suc,fact,vend){
+
+	//usaremos un cuadro de confirmacion	
+	var actualizar = confirm("De verdad desea modificar este precio?")
+	if (actualizar) {
+		respuesta=prompt('Ingrese el monto en el Formato[0.00]:')
+		if(respuesta!="" && respuesta!=null && respuesta!="0"){
+		npvp=respuesta;
+		//instanciamos el objetoAjax
+		ajax=objetoAjax();
+		//uso del medotod POST
+		//indicamos el archivo que realizará el proceso de eliminación
+		ajax.open("POST", "actualizarpvp.php",true);
+
+		ajax.onreadystatechange=function() {
+			if (ajax.readyState==4) {
+				//mostrar resultados en esta capa
+				alert(ajax.responseText);
+				//llamarasincrono('consulta.php','contenidos');	
+				location.reload();
+			}
+		}
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		//como hacemos uso del metodo POST
+		ajax.send("codp="+iditem+"&cod="+cod+"&cant="+cant+"&suc="+suc+"&fact="+fact+"&npvp="+npvp+"&vend="+vend)
+
+		}else{
+			alert('No ingreso ningún monto');
+		}
+
+	}
+//    llamarasincrono('consulta.php','contenidos');	
+
+}

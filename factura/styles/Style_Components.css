@@ -1,0 +1,644 @@
+/* CCSTheme v 3.x */
+/* General */
+
+
+
+.HeaderInnovation {
+	width: 170px;
+	}
+
+.HeaderInnovation th { 
+	font-family: Arial; font-size: 110%; font-weight: bold; text-align: left;
+	padding: 3px;
+	background-image: url('Images/HeaderBg.gif');  color: #ffffff;
+	width: 100%;
+	white-space: nowrap;
+	}
+
+.HeaderLeftInnovation { 
+	background-image: url('Images/HeaderLeft.gif');
+	}
+
+.HeaderRightInnovation { 
+	background-image: url('Images/HeaderRight.gif');
+	}
+
+.HeaderLeftInnovation img{
+	width: 4px;
+	}
+
+.HeaderRightInnovation img{
+	width: 9px;
+	}
+
+
+/* Grid Options */
+.GridInnovation { 
+	border: 1px solid #995757;
+	width: 100%;
+	}
+
+.CaptionInnovation th { 
+	font-family: Arial; font-size: 80%; text-align: left; vertical-align: top;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	background-color: #d6d1de; color: #000000;
+	white-space: nowrap;
+	}
+
+.CaptionInnovation td { 
+	font-family: Arial; font-size: 80%; text-align: left; vertical-align: top;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	background-color: #d6d1de; color: #000000;
+	white-space: nowrap;
+	}
+
+.CaptionInnovation a:link { 
+	color: #000000;
+	}
+
+.CaptionInnovation a:visited { 
+	color: #000000;
+	}
+
+.CaptionInnovation a:hover, .Caption a:active { 
+	color: #d62828;
+	}
+
+.CaptionInnovation img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.CaptionInnovation input {
+	vertical-align: middle;
+	}
+
+.RowInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	vertical-align: top;
+	background-color: #f5f3e9; 
+	color: #000000;
+	}
+
+.RowInnovation a:link { 
+	color: #875622;
+	}
+
+.RowInnovation a:visited { 
+	color: #aa7d7d;
+	}
+
+.RowInnovation a:hover, .Row a:active { 
+	color: #d62828;
+	}
+
+.SeparatorInnovation{
+	color: #995757;
+	}
+
+.SeparatorInnovation td{
+	height: 1px;
+	}
+
+.AltRowInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	vertical-align: top;
+	background-color: #f5f1df; 
+	color: #000000;
+	}
+
+.AltRowInnovation a:link { 
+	color: #875622;
+	}
+
+.AltRowInnovation a:visited { 
+	color: #aa7d7d;
+	}
+
+.AltRowInnovation a:hover, .AltRow a:active { 
+	color: #d62828;
+	}
+
+.NoRecordsInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	background-color: #f5f3e9; 
+	color: #000000;
+	vertical-align: top;
+	}
+
+.FooterInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border: 1px solid #d6d1de; border-left: 0px none;
+	background-color: #f5f3e9; color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.FooterInnovation a:link { 
+	color: #875622;
+	}
+
+.FooterInnovation a:visited { 
+	color: #aa7d7d;
+	}
+
+.FooterInnovation a:hover, .Footer a:active { 
+	color: #d62828;
+	}
+
+.FooterInnovation img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.FooterInnovation input {
+	vertical-align: middle;
+	}
+
+/* Record Options */
+.RecordInnovation { 
+	border: 1px solid #995757;
+	width: 100%;
+	}
+
+.ErrorInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	color: #FF0000;
+	vertical-align: top;
+	background-color: #f5f3e9; 
+	}
+
+.ControlsInnovation th { 
+	font-family: Arial; font-size: 80%; font-weight: normal; text-align: left;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	background-color: #f5f3e9; color: #000000;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.ControlsInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	white-space: nowrap;
+	background-color: #f5f3e9; 
+	color: #000000;
+	}
+
+.BottomInnovation td { 
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border: 1px solid #d6d1de; border-left: 0px none;
+	background-color: #f5f3e9; color: #000000;
+	text-align: right;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.BottomInnovation a:link { 
+	color: #875622;
+	}
+
+.BottomInnovation a:visited { 
+	color: #aa7d7d;
+	}
+
+.BottomInnovation a:hover, .Caption a:active { 
+	color: #d62828;
+	}
+
+.BottomInnovation img {
+	margin: 2px;
+	vertical-align: middle; 
+	}
+
+.BottomInnovation input {
+	vertical-align: middle;
+	}
+
+/* Report */
+.GroupCaptionInnovation th{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	white-space: nowrap;
+	text-align: left; 
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #f5f1df; 
+	color: #000000;
+	}
+
+.GroupCaptionInnovation td{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #f5f3e9; 
+	color: #000000;
+	}
+
+.GroupCaptionInnovation a:link {
+	color: #000000;
+	}
+
+.GroupCaptionInnovation a:visited{
+	color: #000000;
+	}
+
+.GroupCaptionInnovation a:hover, .GroupCaption a:active{
+	color: #d62828;
+	}
+
+.GroupFooterInnovation td{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border: 1px solid #d6d1de; border-left: 0px none;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	background-color: #d6d1de; 
+	color: #000000;
+	}
+
+.GroupFooterInnovation a:link {
+	color: #875622;
+	}
+
+.GroupFooterInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.GroupFooterInnovation a:hover,.GroupFooter a:active{
+	color: #d62828;
+	}
+
+.GroupFooterInnovation img {
+	margin: 2px; 
+	vertical-align: middle;
+	}
+
+.GroupFooterInnovation input {
+	vertical-align: middle;
+	}
+
+.SubTotalInnovation td{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	vertical-align: top;
+	font-weight: bold;
+	background-color: #f5f1df; 
+	color: #000000;
+	border-bottom: 2px solid #995757;
+	}
+
+.SubTotalInnovation a:link {
+	color: #875622;
+	}
+
+.SubTotalInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.SubTotalInnovation a:hover, .SubTotal a:active{
+	color: #d62828;
+	}
+
+.TotalInnovation td{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	vertical-align: top;
+	white-space: nowrap;
+	font-weight: bold;
+	background-color: #f5f1df; 
+	color: #000000;
+	}
+
+.TotalInnovation a:link {
+	color: #875622;
+	}
+
+.TotalInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.TotalInnovation a:hover, .Total a:active{
+	color: #d62828;
+	}
+
+/* Form Options */
+.ButtonInnovation { 
+	margin: 2px
+	}
+
+/* Calendar */
+
+.CalendarInnovation { 
+	border: 1px solid #995757;
+	width: 100%;
+	}
+
+.CalendarWeekdayNameInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	text-align: center; 
+	vertical-align: top;
+	white-space: nowrap;
+	background-color: #f5f1df; 
+	color: #000000;
+	}
+
+.CalendarWeekdayNameInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarWeekdayNameInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarWeekdayNameInnovation a:hover, .CalendarWeekdayName a:active{
+	color: #d62828;
+	}
+
+.CalendarWeekendNameInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	white-space: nowrap;
+	text-align: center; 
+	vertical-align: top;
+	background-color: #f5f1df;	
+	color: #000000;
+	}
+
+.CalendarWeekendNameInnovation a:link {
+	color: #000000;
+	}
+
+.CalendarWeekendNameInnovation a:visited{
+	color: #000000;
+	}
+
+.CalendarWeekendNameInnovation a:link, .CalendarWeekendName a:visited{
+	color: #d62828;
+	}
+
+/* Calendar Day */
+.CalendarDayInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	text-align: center;
+	background-color: #f5f3e9;	
+	color: #000000;
+	}
+
+.CalendarDayInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarDayInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarDayInnovation a:hover, .CalendarDay a:active{
+	color: #d62828;
+	}
+
+/* Calendar Weekend */
+.CalendarWeekendInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	text-align: center;
+	background-color: #f5f1df;	
+	color: #000000;
+	}
+
+.CalendarWeekendInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarWeekendInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarWeekendInnovation a:hover, .CalendarWeekend a:active{
+	color: #d62828;
+	}
+
+/* Calendar Today */
+.CalendarTodayInnovation {
+	font-family: Arial; font-size: 80%;
+	border: 2px solid #995757;
+	text-align: center;
+	background-color: #f5f3e9;	
+	color: #000000;
+	}
+
+.CalendarTodayInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarTodayInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarTodayInnovation a:hover, .CalendarToday a:active {
+	color: #d62828;
+	}
+
+/* Calendar Weekend Today */
+.CalendarWeekendTodayInnovation {
+	font-family: Arial; font-size: 80%;
+	border: 2px solid #995757;
+	text-align: center;
+	background-color: #f5f1df;	
+	color: #000000;
+	}
+
+.CalendarWeekendTodayInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarWeekendTodayInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarWeekendTodayInnovation a:hover, .CalendarWeekendToday a:active{
+	color: #d62828;
+	}
+
+/* Calendar Other Month's Day */
+.CalendarOtherMonthDayInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	text-align: center;
+	background-color: #f5f3e9;	
+	color: #995757;
+	}
+
+.CalendarOtherMonthDayInnovation a:link {
+	color: #995757;
+	}
+
+.CalendarOtherMonthDayInnovation a:visited{
+	color: #995757;
+	}
+
+.CalendarOtherMonthDayInnovation a:hover, .CalendarOtherMonthDay a:active{
+	color: #d62828;
+	}
+
+/* Calendar Other Month's Today */
+.CalendarOtherMonthTodayInnovation {
+	font-family: Arial; font-size: 80%;
+	border: 2px solid #995757;
+	text-align: center;
+	background-color: #f5f3e9;	
+	color: #995757;
+	}
+
+.CalendarOtherMonthTodayInnovation a:link {
+	color: #995757;
+	}
+
+.CalendarOtherMonthTodayInnovation a:visited{
+	color: #995757;
+	}
+
+.CalendarOtherMonthTodayInnovation a:hover,.CalendarOtherMonthToday a:active{
+	color: #d62828;
+	}
+
+/* Calendar Other Month's Weekend */
+.CalendarOtherMonthWeekendInnovation {
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	text-align: center;
+	background-color: #f5f1df;	
+	color: #995757;
+	}
+
+.CalendarOtherMonthWeekendInnovation a:link {
+	color: #995757;
+	}
+
+.CalendarOtherMonthWeekendInnovation a:visited{
+	color: #995757;
+	}
+
+.CalendarOtherMonthWeekendInnovation a:hover, .CalendarOtherMonthWeekend a:active{
+	color: #d62828;
+	}
+
+/* Calendar Other Month's Weekend Today */
+.CalendarOtherMonthWeekendTodayInnovation {
+	font-family: Arial; font-size: 80%;
+	border: 2px solid #995757;
+	text-align: center;
+	color: #995757;
+	background-color: #f5f1df;	
+	}
+
+.CalendarOtherMonthWeekendTodayInnovation a:link {
+	color: #995757;
+	}
+
+.CalendarOtherMonthWeekendTodayInnovation a:visited{
+	color: #995757;
+	}
+
+.CalendarOtherMonthWeekendTodayInnovation a:hover, .CalendarOtherMonthWeekendToday a:active{
+	color: #d62828;
+	}
+
+/* Calendar Selected Day (for DatePicker) */
+.CalendarSelectedDayInnovation{
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	border-top: 1px solid #d6d1de; border-right: 1px solid #d6d1de;
+	background-color: #d6d1de;
+	color: #000000;
+	text-align: center;
+	font-weight: bold;
+	}
+
+.CalendarSelectedDayInnovation a:link {
+	color: #000000;
+	}
+
+.CalendarSelectedDayInnovation a:visited{
+	color: #000000;
+	}
+
+.CalendarSelectedDayInnovation a:hover, .CalendarSelectedDay a:active{
+	color: #d62828;
+	}
+
+/* Calendar Navigator */
+.CalendarNavigatorInnovation {
+	font-family: Arial; font-size: 80%;
+	padding: 3px;
+	background-color: #f5f3e9; color: #000000;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	color: #000000;
+	}
+
+.CalendarNavigatorInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarNavigatorInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarNavigatorInnovation a:hover, .CalendarNavigator a:active{
+	color: #d62828;
+	}
+
+.CalendarNavigatorInnovation img{
+	margin: 2px;
+	vertical-align: middle; 	
+	}
+
+/* Calendar Extra */
+.CalendarEventInnovation{
+	font-family: Arial; font-size: 80%;
+	text-align: left;
+	}
+
+.CalendarEventInnovation a:link {
+	color: #875622;
+	}
+
+.CalendarEventInnovation a:visited{
+	color: #aa7d7d;
+	}
+
+.CalendarEventInnovation a:hover, .CalendarEvent a:active{
+	color: #d62828;
+	}

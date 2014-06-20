@@ -1,0 +1,11 @@
+#area1 {
+	display:none;
+	border: 2px solid #CC0000;
+
+}
+#area2 {
+	visibility:visible;
+	display:block;
+	border: 2px dashed #CC0000;
+
+}

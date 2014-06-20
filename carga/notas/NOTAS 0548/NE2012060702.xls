@@ -1,0 +1,127 @@
+ 
+
+<table border=0>
+	<tr height='60'>
+		<td><img src="http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/cabecera.jpg" width='630' height='60'></td>
+	</tr>
+	<tr height='100'>
+		<td><img src="http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/logolateral.jpg" width='150' height='100'></td>
+		<TD></TD><TD></TD><TD></TD><TD></TD><TD></TD>
+		<td><img src="http://inventario.distribuidoradellibro.gob.ve/inventario/inventario.php/inventario/images/filven6.jpg" width='110' height='100'></td>
+	</tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Nº. Entrega:</TD><TD><strong>NE2012060702</strong></TD>
+		<TD>Fecha: <strong>12/06/2012</strong></TD></tr>
+	<tr><TD>Nº. Pedido:</TD><TD colspan="4"><strong>PE2012060467</strong></TD></tr>
+	<tr><TD>Vendedor:</TD><TD colspan="4"><strong>DISTRIBUIDORA</strong></TD></tr>
+	<tr><TD>Cliente:</TD><TD colspan="7"><strong>0548 - LIBRERIA DEL SUR HOTEL ALBA</strong></TD></tr>
+	<tr><TD>Dirección:</TD><TD colspan="7"><strong>AV. MEXICO, C/AV. SUR 25, FTE. AL TEATRO TERESA CARRENO URB./EL CONDE  EN EL LOBBY DEL HOTEL </strong></TD></tr>
+	<tr><TD>R.I.F.:</TD><TD><strong>G-20007995-9</strong></TD>
+		<TD colspan="6">Telefono: <strong>X</strong></TD></tr>
+	<tr><TD>Contacto:</TD><TD><strong>X</strong></TD>
+		<TD colspan="6">Transacción: <strong>CONSIGNACION</strong></TD></tr>
+	<tr><TD colspan="3">Forma de Pago: <strong>Consignacion</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Observaciones:</TD><TD colspan="7"><strong>RED DE LIBRERIAS DEL SUR/ FUND. EDT.CELAR</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr bgcolor="#eeeeee">
+    	<TD align='center' width='100'><strong><font size="2" color="#990000">Cod. Articulo</font></strong></TD> 
+		<TD width='150'><strong><font size="2" color="#990000">Titulo</font></strong></TD> 
+		<TD width='150'><strong><font size="2" color="#990000">Autor</font></strong></TD> 
+		<TD align='center' width='55'><strong><font size="2" color="#990000">Num Tomo</font></strong></TD> 		
+		<TD align='center' width='15'><strong><font size="2" color="#990000">P</font></strong></TD> 
+		<TD align='center' width='60'><strong><font size="2" color="#990000">Precio Unitario</font></strong></TD> 
+		<TD align='center' width='35'><strong><font size="2" color="#990000">Cant Ped</font></strong></TD> 
+		<TD align='center' width='35'><strong><font size="2" color="#990000">Cant Entr</font></strong></TD> 
+		<TD align='center' width='70'><strong><font size="2" color="#990000">Precio Exten.</font></strong></TD> 
+	</tr>
+	
+	<tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 0007000178</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>REVISTA SUR VERSION 1 LOS NOMBRES PROPIOS DE NUESTRO SUR JULIO DICIEMBRE 2011</font></TD> <TD><font size='2'>Varios</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>U</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>30.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>10</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>10</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>300.00</font></TD>          
+         <tr><TD align='LEFT'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'># 0007000179</font></TD> <TD><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>METODO PARA EL TRABAJO Y LA ORGANIZACION POPULAR</font></TD> <TD><font size='2'>Varios</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>0</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>U</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>5.00</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>8</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>8</font></TD> <TD align='center'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>40.00</font></TD>          
+         
+	<tr><TD></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>Total:</TD><TD align='center'><strong>=SUMA(G16:G18)</strong></TD>
+																	<TD align='center'><strong>=SUMA(H16:H18)</strong></TD>
+																	<TD align='center'><strong>340,00</strong></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>% Desc:</TD><TD></TD><TD></TD><TD align='center'><strong>40,00</strong></TD></tr>
+	<tr><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD>Total General:</TD><TD></TD><TD></TD><TD align='center'><strong>204,00</strong></TD></tr>
+	<tr><TD></TD></tr>
+	<tr><TD>Recibido:</TD><TD align='left' colspan='2'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'><strong>ERVIN ARMAS</strong></TD>
+		<TD align='left' colspan='5'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>Autorizado: <strong>DIANA BLANCO</strong></TD></tr>
+	<tr><TD align='left' colspan='8'><font size='2' FACE='Consolas,Calibri,Tahoma,Arial Narrow'>Observaciones: <strong>EDITORIAL CELARGNOVEDAD JUNIO 2012</strong></TD></tr>
+	</table>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

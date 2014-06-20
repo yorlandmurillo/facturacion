@@ -1,0 +1,684 @@
+/******************************************************************************
+ * TWIG's default CSS markup for the "Classic" TWIG look.
+ ******************************************************************************/
+
+/*
+ *
+ * GLOBAL:  Global CSS code follows
+ *
+ */
+
+/******************************************************************************
+  Generic HTML Elements.
+  */
+  
+input, select,textarea    { border: 1px solid silver; }
+input.error {padding-right: 12px; border: 1px solid red; background-image: url(../user/imagenes/warning_obj.gif); background-position: right; background-repeat: no-repeat;}
+input:focus {border: 1px solid red; background-color:#EFEFEF;}
+
+
+
+td.activetab {
+    background-color: silver;
+}
+
+TD{
+    BORDER-RIGHT: #EFEFEF thin solid;
+    BORDER-TOP: #EFEFEF thin solid;
+    BORDER-LEFT: #EFEFEF thin solid;
+    BORDER-BOTTOM: #EFEFEF thin solid;
+    PADDING-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-TOP: 1px;
+    PADDING-BOTTOM: 1px;
+    FONT-FAMILY: Verdana, Arial;
+    /*TEXT-ALIGN: center;*/
+    color: #000000;
+    FONT-SIZE: 2pt;
+    BACKGROUND-COLOR: #FFFFCC";
+}
+
+  
+  #accesos{
+  float: left;
+  font-size: 20px;
+  }
+  
+  #mensaje {
+   float: left;
+	border-left: 1px solid #666666;
+	border-right: 1px solid #666666;
+	margin: 10px 0px 0px 0em;
+	width: 720px;
+	
+	padding: 1em 1em 1em 1em;
+	background: #f3f3f3;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 12px;
+	text-align: justify;
+	font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+	color: #666666;
+}
+ 
+  
+  #noticias {
+   float: left;
+	border-left: 1px solid #666666;
+	border-right: 1px solid #ffffff;
+	margin: 10px 0px 0px 0em;
+	width: 314px;
+	height: 170px;
+	padding: 1em 1em 1em 1em;
+	background: #f3f3f3;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 12px;
+	/*text-align: justify;*/
+	
+	font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+	color: #666666;
+}
+
+.textonoti {
+	text-align: justify;
+}
+
+#noticias a {
+	color: #CE272A;
+}
+
+#noticias a:hover {
+	text-decoration: underline;
+}
+
+  #eventos {
+   border-left: 1px solid #666666;
+   border-right: 1px solid #666666;
+   float: left;
+	margin: 10px 0px 0px 0em;
+	width: 156px;
+	height: 170px;
+	padding: 1em 1em 1em 1em;
+	background: #f3f3f3;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 12px;
+	text-align: justify;
+	font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+	color: #666666;
+}
+
+
+#menu {
+   float: left;
+   border-left: 1px solid #666666;
+   border-right: 1px solid #666666;
+	margin: 0px 0px 0px 0em;
+	height: 85px;
+	padding: 2em 5em 2em 2em;
+	background: #f3f3f3;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 12px;
+	text-align: justify;
+	font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+	color: #666666;
+}
+
+
+#ayuda {
+	width: 14em;
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+	float: left;
+	margin: 0px;
+	position: static;
+	font-size: 12px;
+	font-weight: normal;
+
+}
+
+
+#ayuda a {
+	color: #CE272A;
+	font-weight: bold;
+}
+#ayuda a:hover {
+	text-decoration: none;
+}
+
+
+.content {
+	border-left: 1px solid #666666;
+	border-right: 1px solid #666666;
+	margin: 0px 0px 0px 14em;
+	padding: 2em 5em 2em 2em;
+	background: #f3f3f3;
+	border-top: 0px solid #666666;
+	border-bottom: 1px solid #666666;
+	font-size: 12px;
+	text-align: center;
+	font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+	color: #666666;
+
+}
+
+BODY {
+font-family: "Trebuchet MS", Arial, Geneva, san-serif;
+  background-color: #ffffff;
+	font-size: 12px;
+color: #666666;
+	
+}
+
+BODY, P, TD, OPTION, SELECT, INPUT, TEXTAREA {
+ font-size: 12px;
+}
+
+PRE {
+  font-size:        0.9em;
+}
+
+BODY, P, TD, OPTION, SELECT {
+  font-family:      Arial, Helvetica, sans-serif;
+}
+
+PRE, TEXTAREA {
+  font-family:      monospace;
+}
+
+INPUT {
+  font-family:      Arial, Helvetica, sans-serif;
+}
+
+HR {
+}
+
+A {
+  color: #CE272A;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+A:link {
+  color: #CE272A;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+A:visited {
+    color: #CE272A;
+    text-decoration: none;
+}
+
+
+
+A:hover {
+	text-decoration: underline;
+}
+
+
+A:active {
+	text-decoration: none;
+}
+
+/* End, HTML Elements
+*******************************************************************************/
+
+/******************************************************************************
+  TWIG classes
+  */
+
+.twigheader {
+	background: #CE272A;
+	width: 40em;
+	margin: 0px;
+	padding: .5em .5em .5em 1em;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	border-bottom: 4px solid #BD8410;
+	font-size: 18px;
+}
+.twigfooter {
+       padding-top: 5px;
+	padding-left: 17pc;
+	font: 100% Arial;
+	color: #333333;
+	letter-spacing: .1em;
+	padding-bottom: 5px;
+       text-align: right;
+
+}
+
+.td{
+background-color:	#1873A5;
+}
+
+
+td.tabletitle, td.tabletitle A {
+
+font-family: Arial;
+  font-size:       13px;
+  font-weight		:bold;
+  color:           #ffffff;
+  background-color:	#1873A5;
+  padding:		.2em;
+  text-decoration: none;
+}
+
+td.tabletitlesmall {
+
+  font-size:		1em;
+  color:		#FFFFFF;
+  background-color:	#CE272A;
+  padding:		.2em;
+}
+
+td.tabletitlelarge {
+
+  font-size:       1.4em;
+  color:           #FFFFFF;
+  background-color:      #CE272A;
+  padding:		.2em;
+}
+
+
+
+
+input.listselect { /* class for the checkboxes to the right of all indexes/lists, e.g. in mail, bookmarks, contacts, etc. */
+}
+
+.roweven {
+
+  background-color:     #f3f3f3;
+  color:          #666666;
+  text-align:		left;
+}
+
+.rowodd {
+
+  background-color:      #f3f3f3;
+  color:           #666666;
+  text-align:		left;
+}
+
+.rowhead, .rowhead A, .rowhead TD {
+
+  font-weight:     bold;
+  background-color:      #1D88C2;
+  color:           #ffffff;
+text-decoration: none;
+}
+
+.formhead {
+
+  font-weight:     bold;
+  background-color:      #CE272A;
+  color:           #ffffff;
+}
+
+.formbody {
+
+  background-color:      #f3f3f3;
+  color:           #666666;
+  text-align:		left;
+}
+
+.formhighlight {
+
+  background-color:	#f3f3f3;
+  color:		#666666;
+  text-align:		left;
+}
+
+.formbodyalt {
+
+  background-color:	#CE272A;
+  color:		#ffffff;
+}
+
+TABLE.index TD {
+/*
+ * The following chunk will put a border between rows of index-style lists.
+ * The twig-devel mailing list found this interesting, but decided against it.
+ * Let us know if it should be part of the defaults.
+ */
+/*
+ *  border-bottom-width:  1px;
+ *  border-style:         solid;
+ *  border-color:         #999999;
+ */
+  padding-right:   0.5em;
+}
+
+/*
+ * The following CSS classes are for the previous/next links/images/widget that
+ * is used to "flip pages" through your Mail, Bookmarks, etc. lists.
+ * All classes that begin with "nav-" are reserved for this use.
+ * .navigation  The navigation widget as a whole.
+ * .nav-first   The part that links to the first page, after using "previous" repetedly.
+ * .nav-prev    The part that links to the previous page.
+ * .nav-curr    The part that indicates the current page.
+ * .nav-next    The part that links to the next page.
+ * .nav-last    The part that links to the last page, after using "next" repetedly.
+ */
+.navigation {
+  background-color:       #f3f3f3;
+  color:                  #666666;
+  border-style:           solid;
+  border-color:           #666666;
+  border-top-width:       1px;
+  border-right-width:     1px;
+  border-bottom-width:    1px;
+  border-left-width:      1px;
+  margin-top:             1px;
+  margin-right:           0px;
+  margin-bottom:          0px;
+  margin-left:            0px;
+}
+
+.nav-first {
+text-decoration:		none;
+
+}
+
+.nav-prev {
+text-decoration:		none;
+
+}
+
+.nav-curr {
+text-decoration:		none;
+
+}
+
+.nav-next {
+text-decoration:		none;
+
+}
+
+.nav-last {
+text-decoration:		none;
+
+}
+
+.navigation span {
+  margin-left:   0.25em;
+  margin-right:  0.25em;
+}
+
+/*
+ * The following classes starting with .tab... are to format the tab menus
+ */
+/*
+ * Text in tabs shouldn't be underlined.
+ */
+.tabactive, .tabinactive {
+  text-decoration:		none;
+}
+
+/* Active tabs should be taller */
+.tabactive .tabin1 {
+  height:				35px;
+}
+
+.tabactive .tabin2 {
+  height:				35px;
+}
+
+.tabinactive .tabin1 {
+  background:			#f3f3f3 right top no-repeat;
+}
+
+.tabinactive .tabin2 {
+  background:			#f3f3f3 right top no-repeat;
+}
+
+/*
+ * Specs for tabs in general.
+ * Inactive tab settings go here and are then
+ * overriden in the .tabactive .tabin1 and .tabactive .tabin2
+ * sections above.
+ */
+.tabin1 {
+  padding:				0px 0px 10px 10px;
+  margin:				0px;
+  background:			#E4E4E4 left top no-repeat;
+  border-right:			1px solid #cccccc;
+  height:				25px;
+}
+.tabin2 {
+  padding:				10px 10px 0px 0px;
+  margin:				0px;
+  background:			#E4E4E4 right top no-repeat;
+  height:				25px;
+}
+
+.menuprimary {
+  text-align:  right;
+}
+
+.menusecondary {
+}
+
+/* End, TWIG classes
+*******************************************************************************/
+
+/******************************************************************************
+  TWIG ID selectors
+  */
+
+/* End, TWIG ID selectors
+*******************************************************************************/
+
+/*
+ *
+ * Feature specific CSS code follows
+ *
+ */
+
+/*
+ *
+ * MAIL FEATURE
+ *
+ */
+
+/******************************************************************************
+  Mail Feature classes
+  */
+
+.oddnewundel, TR.oddnewundel TD {
+  background-color:       #f3f3f3;
+  text-decoration:  none;
+  font-weight:      bold;
+}
+
+.oddnewdel, TR.oddnewdel TD {
+  background-color:       #f3f3f3;
+  text-decoration:  none;
+  font-weight:      bold;
+}
+
+.oddreadundel, TR.oddreadundel TD {
+  background-color:       #f3f3f3;
+  text-decoration:  none;
+}
+
+.oddreaddel, TR.oddreaddel TD {
+  background-color:       #f3f3f3;
+  text-decoration:  none;
+}
+
+.evennewundel, TR.evennewundel TD {
+  background-color:       #ffffff;
+  text-decoration:  none;
+  font-weight:      bold;
+}
+
+.evennewdel, TR.evennewdel TD {
+  background-color:       #ffffff;
+  text-decoration:  none;
+  font-weight:      bold;
+}
+
+.evenreadundel, TR.evenreadundel TD {
+  background-color:       #ffffff;
+  text-decoration:  none;
+}
+
+.evenreaddel, TR.evenreaddel TD {
+  background-color:       #ffffff;
+  text-decoration:  none;
+}
+
+.mail_graph_text {
+  text-align: left;
+  font-size: 10px;
+  color: #333;
+}
+
+.mail_graph_box {
+  border-top: 1px Solid #000000;
+  border-bottom: 1px Solid #000000;
+  border-left: 1px Solid #000000;
+  border-right: 1px Solid #000000;
+  height: 15px;
+}
+
+.mailquote1 { /*  Text color for lines with 1 reply marker '>'  */
+  color:				#990099;
+}
+.mailquote2 { /*  Text color for lines with 2 reply markers '>>'  */
+  color:				#336600;
+}
+.mailquote3 { /*  Text color for lines with 3 reply markers '>>>'  */
+  color:				#CC0000;
+}
+.mailquote4 { /*  Text color for lines with 4 reply markers '>>>>'  */
+  color:				#CC6600;
+}
+.mailquote5 { /*  Text color for lines with 5 reply markers '>>>>>'  */
+  color:				#6666FF;
+}
+.mailsignature {
+  font-style:			italic;
+}
+
+/* End, Mail Feature classes
+*******************************************************************************/
+
+/******************************************************************************
+ Mail Feature ID selectors
+ */
+
+/* End, Mail Feature ID selectors
+*******************************************************************************/
+
+/*
+ *
+ * SCHEDULE FEATURE
+ *
+ */
+
+/******************************************************************************
+ Schedule Feature classes
+ */
+
+.maintfeedback {
+  /* For "save-then-edit" in maintenance page */
+  font-size:         1.2em;
+}
+
+.weekdayheader {
+  /* Specifies the "Monday", "Tuesday", etc. lines in the weekly view */
+  text-align:           center;
+  font-weight:          bold;
+  border-top-width:     1px;
+  border-right-width:   0px;
+  border-bottom-width:  0px;
+  border-left-width:    1px;
+  border-style:         solid;
+  border-color:         #666666;
+}
+
+.tableovertitle {
+  font-size:         1.2em;
+  text-align:      left;
+}
+
+.cal_day_head {
+  color:		#666666;
+  background-color:	#f3f3f3;
+  text-align:		center;
+}
+
+.cal_day, .cal_day A {
+  color:		#000000;
+  text-align:		center;
+}
+
+.cal_today, .cal_today A {
+  color:		#778899;
+  background-color:	#ffffff;
+  text-align:		center;
+  font-weight:		bold;
+}
+
+.cal_item_on_day, .cal_item_on_day A{
+  color:		#ffffff;
+  background-color:	#778899;
+  text-align:		center;
+}
+
+.month_day, .month_day A {
+  color:		#000000;
+}
+
+.month_today, .month_today A {
+  color:		#778899;
+  background-color:	#ffffff;
+  font-weight:		bold;
+}
+
+.month_item_on_day, .month_item_on_day A{
+  color:		#ffffff;
+  background-color:	#778899;
+}
+
+.recurwarn {
+  /* For the phrase that warns that you need to save, then edit. */
+  font-size:         0.8em;
+}
+
+/* End, Schedule Feature classes
+*******************************************************************************/
+
+/******************************************************************************
+ Schedule Feature ID selectors
+ */
+
+/* End, Schedule Feature ID selectors
+*******************************************************************************/
+/*
+ *
+ * ToDo FEATURE
+ *
+ */
+
+/******************************************************************************
+ ToDo Feature classes
+ */
+.duedatepast {
+  color:		#ff0000;
+}
+
+.duedatetoday {
+  color:		#ff6600;
+}
+
+.duedatefuture {
+  color:		#009900;
+}
+
+/* End, ToDo Feature classes
+*******************************************************************************/

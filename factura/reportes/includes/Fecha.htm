@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Oficina Virtual de Agente Movilnet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script src="val_ovaa.js"></script>
+<script src="calendario.js"></script>
+<script LANGUAGE=JavaScript>
+alert("entro");
+var Meses= new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var VentanaNueva;
+var VentanaActual;
+var controlFecha = eval("opener.document."+obtenerParametro("control"));
+var formatoFecha = obtenerParametro("formato");
+var fechaInicial = obtenerParametro("fechaInicial");
+var annioInicial = obtenerParametro("annioInicial");
+var annioFinal = obtenerParametro("annioFinal");
+var titulo = unescape(obtenerParametro("titulo"));
+if (titulo!="") {
+	document.title = titulo;
+}
+function resize() {
+	var ancho = 250;
+	var alto = 150;
+	var posX = parseInt((screen.availWidth-ancho)/2,10);
+	var posY = parseInt((screen.availHeight-alto)/2,10);
+	window.resizeTo(ancho,alto);
+	window.moveTo(posX, posY);
+}
+
+function FuCerrar(Dia,Mes,Annio) {
+	controlFecha.value = fechaFormateada(Dia,Mes,Annio);
+	window.close();
+}
+
+function FuCargarNueva(Dia,Mes,Annio) {
+	var locBase = location.href.substring(0,location.href.indexOf(location.search));
+	window.location = locBase + "?control="+obtenerParametro("control")+"&formato="+formatoFecha+
+										"&annioInicial="+annioInicial+"&annioFinal="+annioFinal+
+										"&fechaInicial="+fechaFormateada(Dia,Mes,Annio)+"&titulo="+titulo;
+}
+
+function SeMes_OnChange() {
+	var FechaTexto = fechaMostrada(fechaInicial);
+	FuCargarNueva(FechaTexto.getDate(),document.forms[0].SeMes.selectedIndex+1, FechaTexto.getFullYear());
+}
+
+function SeAnnio_OnChange()
+{
+	 FuCargarNueva(1,document.forms[0].SeMes.selectedIndex+1,document.forms[0].SeAnnio.options[document.forms[0].SeAnnio.selectedIndex].value);
+}
+</script>
+
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" marginheight="0" marginwidth="0" leftmargin="0" topmargin="0" bottommargin="0" rightmargin="0" onLoad="resize();">
+<form name="FoForma" method="post" action="">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+  <tr>
+    <td class="texto" width="100%" align="center">        
+      <select class="texto" name="SeMes" onChange="SeMes_OnChange()">
+	      <script LANGUAGE=JavaScript>
+			var FechaTexto = fechaMostrada(fechaInicial);
+			 for (i=0;i<=11;i++)
+			 {
+			 	if (FechaTexto.getMonth()==i)
+					document.write('<option value="'+i+'" selected>'+Meses[i]+'</option>\n');
+				else
+					document.write('<option value="'+i+'">'+Meses[i]+'</option>\n');
+			 }
+		  </script>
+        </select>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<select class="texto" name="SeAnnio" size="1" onChange="SeAnnio_OnChange()">
+	      <script LANGUAGE=JavaScript>
+			var FechaTexto = fechaMostrada(fechaInicial);
+			 for (i=annioInicial;i<=annioFinal;i++)
+			 {
+			 	if (FechaTexto.getFullYear()==i)
+					document.write('<option value="'+i+'" selected>'+i+'</option>\n');
+				else
+					document.write('<option value="'+i+'">'+i+'</option>\n');
+			 }
+		  </script>
+		</select>	
+		<script LANGUAGE=JavaScript>
+		var i;
+			for (i=0;i<document.forms[0].SeAnnio.options.length;i++)
+			{
+				if (document.forms[0].SeAnnio.options[i].value==FechaTexto.getFullYear())
+					document.forms[0].SeAnnio.selectedIndex=i;
+			}
+		</script>
+    </td>
+  <tr>
+  	<td class="texto" colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  </table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+  <tr bgcolor="#649ECC"> 
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;D</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;L</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;M</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;M</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;J</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;V</b>
+    </td>
+    <td class="texto" width="10%" align="center"> 
+      <b>&nbsp;S</b>
+    </td>
+  </tr>
+  <SCRIPT LANGUAGE=JavaScript>
+  		var i;
+		var DiaSemana;
+		var MesPintado;
+  		var DiaPintado = fechaMostrada(fechaInicial);
+			DiaPintado.setDate(1);
+  		MesPintado = DiaPintado.getMonth();		
+
+		i=0;
+		DiaSemana = DiaPintado.getDay();
+		document.write('<TR>');
+		while (i<DiaSemana)
+		{
+			document.write('<td class="texto">&nbsp;</TD>');
+			i++;
+		}
+		do
+		{
+			document.write('<td class="b"><A href="javascript:FuCerrar('+DiaPintado.getDate()+','+parseInt(DiaPintado.getMonth()+1)+','+DiaPintado.getFullYear()+')"><div align="center">'+DiaPintado.getDate()+'</div></A></TD>');
+			i++;
+			DiaPintado.setDate(parseInt(DiaPintado.getDate()+1));
+			if ((i==7)||(MesPintado!=DiaPintado.getMonth()))
+			{
+				document.write('</TR>');
+				i=0;
+			}
+		}
+		while (MesPintado==DiaPintado.getMonth());
+  </SCRIPT>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,119 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: relative; 
+}
+body {
+	font: 80% Verdana, Arial, Sans-Serif;
+	background-color: #ffffff;
+	color: #FFFfff;
+}
+code {
+	font-size: 1.2em;
+	font-style: italic;
+}
+#cabecera {
+	clear: both;
+	position: relative;
+	margin-bottom: 10px;
+	height: 20%;
+	color: #000;
+	border-bottom: 1px solid;
+	background: #000 url(http://www.niquelao.net/wp-content/themes/rumoroso/img/head.jpg) bottom left no-repeat;
+}
+input {
+	font-size: 1em;
+	display: block;
+	margin-left: 2em;
+}
+
+h1 {
+	position: absolute;
+	width: 245px;
+	height: 52px;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	color: #000;
+	font-size: 1em;
+	margin: 0;
+	color: #000;
+}
+h1 a,
+h1 a:hover {
+	border: none;
+	display: block;
+	height: 52px;
+	width: 300px;
+	color: #000;
+	text-decoration: none;
+}
+h1 a {
+	background: transparent url(http://www.niquelao.net/wp-content/themes/rumoroso/img/niquelao.jpg) bottom left no-repeat;
+}
+#cabecera span {
+	position: relative;
+	z-index: -1
+}
+#content {
+	width: 70%;
+	margin: auto;
+	padding: 15px;
+	color: #000;
+	background: #000 url(http://www.niquelao.net/wp-content/themes/rumoroso/img/orange/ftr.gif) top right no-repeat;
+}
+h2 {
+	font-size: 1.3em;
+	margin: 1em 0;
+	border-bottom: 1px dashed;
+}
+h3 {
+	margin: .5em 0;
+	font-size: 1em;
+	border-bottom: 1px solid;
+	font-weight: normal;
+}
+ul {
+	padding: 0 20px;
+	margin: 0;
+}
+li {
+	margin-right: 5em;
+	margin-left: 5em;
+}
+.pie {
+	text-align: center;
+	padding-bottom: 1em;
+}
+a:link,
+a:visited {
+	color: #000;
+}
+p {
+	padding-right: 20px;
+	padding-left: 20px;
+	margin: 0 0 1em;
+}
+p.clasificado {
+	margin: -15px;
+	font-size: .9em;
+	background: transparent url(http://www.niquelao.net/wp-content/themes/rumoroso/img/orange/ftl1.gif) top left no-repeat;
+	padding: .5em 2em;
+	text-align: right;
+}
+pre {
+	font-size: 1.2em;
+	background-color: #ddd;
+	color: #000;
+	border-width: 1px 1px 1px 10px;
+	border-color: #000;
+	border-style: solid;
+	padding: 5px;
+}
+.ejemplo {
+	width: 80%;
+	margin: auto;	
+}

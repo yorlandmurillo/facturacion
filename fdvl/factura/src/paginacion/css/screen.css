@@ -1,0 +1,7 @@
+h1 {font-size :15px;}
+h2 {font-size :13px;}
+p, li {font-size :12px;}
+#main {width:950px}
+#lcolumn {width: 100px; float:left}
+#maincontainer {margin-left : 110px;}
+pre {background-color : #E6EEEE;padding: 10px; border : 1px solid #CDCDCD;overflow:auto;}

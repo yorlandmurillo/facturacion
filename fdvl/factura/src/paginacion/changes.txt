@@ -1,0 +1,23 @@
+Change Log
+11 Jun 2009
+* Added some messages for pagination
+
+28 May 2009
+* Fixed caching so that it is now effective.
+* Added the Search tool. It is like the Filter tool but searches the whole record instead of just column.
+* Added a messages (msgs) global variable for keeping all text delivered to the user in one place. In the future it might be useful for i18n type stuff.
+* Added a message to the user when there are no results displayed on an updateTable call.
+* Added documentation to the unpacked version of the TableOrderer.js
+
+23 May 2009
+* Added First and Last pagination buttons
+* Integrated a caching feature so that paging and ordering operations are only using cached data. The cached is updated when filtered. This will hopefully allow larger datasets to be used.
+
+21 May 2009
+* Added a new option called pageCount for number of items by table
+* Changed paginate to define where the pagination should show up (similar to filter option)
+* Added a new tools object to keep the state of the filter and pagination tools instead of querying the DOM as much.
+* Broke addObserver into addToolsObserver and addTableObserver since the tools (filter and pagination) have its HTML elements created once where the table elements are created over and over.
+* filterData now has two approaches: (1) If pagination is turned ON then recreate the rows using updateTable. Somewhat costly due to creating new elements but hopefully offset by a smaller amount of rows being shown. (2) If pagination is turned OFF then just hiding the rows, which is much faster.
+* createTable and createRows are only used the first time the table is created. It sets everything up. updateTable and updateRows just update the data information on the screen.
+* Pagination and filtering are now independent of each other. Which means you can have pagination turned on while filtering turned off and vice-versa. And pagination can be on top while filtering on the bottom or vice-versa.

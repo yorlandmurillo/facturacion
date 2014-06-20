@@ -1,0 +1,27 @@
+Libreria del Sur: PLAZA BOLIVAR
+RIF: G-20007995-9
+Vendedor:nmosquera
+Telefono: 0
+# Factura Contado: FAC-2-783
+C.I/RIF: j294290930
+Cliente: corporacion garnep
+Fecha:	Jul 22 de 2011 10:27 a.m.
+	"Contribuyente Formal"
+----------------------------------------
+#  Descrip.	Cant.	PVP	I.V.A
+----------------------------------------
+1  LA COMUNA 	1	5.00	(E)
+
+Sub Total:	5.00
+I.V.A(12%):	0.00	Desc:	0.00
+Total Cancelar:	5.00 BsF.
+Libros Vendidos:	1
+FORMA DE PAGO:          
+Efectivo:	5,00
+NO SE ACEPTAN DEVOLUCIONES          
+
+
+
+
+
+

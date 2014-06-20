@@ -1,0 +1,21 @@
+.transMenu {
+	LEFT: -1000px; OVERFLOW: hidden; POSITION: absolute; TOP: -1000px
+}
+.transMenu .content {
+	POSITION: absolute
+}
+.transMenu .items {
+	Z-INDEX: 2; LEFT: 0px; POSITION: relative; TOP: 0px
+}
+.top .items {
+	BORDER-TOP: medium none
+}
+.transMenu .item {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 10px; BORDER-LEFT: medium none; CURSOR: hand; COLOR: #336; BORDER-BOTTOM: medium none; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+A.mainlevel_topmenu {
+	PADDING-LEFT: 20px; TEXT-TRANSFORM: uppercase; COLOR: #ffffff; TEXT-ALIGN: left
+}
+A.sublevel_topmenu {
+	COLOR: #ffffff
+}

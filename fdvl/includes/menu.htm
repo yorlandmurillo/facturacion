@@ -1,0 +1,73 @@
+
+
+<style>
+/* General */
+
+body {
+	font-family: arial, sans-serif;
+	font-size: 0.9em;
+	margin: 0px;
+	padding: 0;
+}
+
+/* Aquí el menu */
+
+ul#menu {
+    height: 28px; /* cada enlace tiene 25 de altura + 5 de padding superior + 5 de padding inferior */
+	margin: 0 0px; /* -20px a los márgenes laterales para que el menu quede ajustado al borde de la página */
+	padding: 0 0px; /* padding para que se conserve el delimitar visual  */
+    background-color: #c40001; /* Fondo del mismo color de los enlaces */
+	font-size: 1.3em;
+}
+
+ul#menu li {
+    display: inline; /* las listas se transforman en elementos en linea para el mejor trabajo con los enlaces de ellas (con ello desaparecen las viñetas) */
+}
+
+ul#menu li a {
+    display: block; /* indispensable para que el enlace que se pueda presionar desde cualquier punto junto con width y height */
+    width: 95px;
+    height: 18px;
+    float: left; /* para formar el menu horizontal, los enlaces que ahora son elementos en bloque quedan uno al lado de otro */
+
+	/* Estilo de cada enlace */
+	background-color:#c42420;
+    color: #FFF;
+    text-decoration: none;
+	text-align: center;
+	border-right: 1px solid #e10e17;
+	padding:5px;
+}
+
+/* Estilos adicionales de colores para los enlaces en los distintos estados */
+
+ul#menu li a:hover {
+	background-color: #ff0000;
+color: #edc7c4;
+}
+
+ul#menu li a:active {
+	background-color: #C42420;
+	color: #999;
+}
+
+
+
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+<ul id="menu">
+<li><a href="inventario.php" title="Inicio, Pagina de Inicio del Sistema">Inicio</a></li>
+<li><a href="inventario.php?p=operativo" title="Operativo ">Operativo</a></li>
+<li><a href="salida.php" title="Salida, Salir del Sistema">Salida</a></li>
+</ul>
+
+

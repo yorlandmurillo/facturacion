@@ -1,0 +1,58 @@
+/*FuentesAutorrelleno -> http://script.aculo.us
+
+Esquinas redondeadas -> http://usalo.es (http://usalo.es/53/limar-las-esquinas-con-css/)
+
+*/
+
+div.autorelleno {
+position:absolute;
+width:250px;
+background-color:white;
+border:1px solid #888;
+margin:0px;
+padding:0px;
+}
+div.autorelleno ul {
+list-style-type:none;
+margin:0px;
+padding:0px;
+}
+div.autorelleno ul li.selected { background-color: #ffb;}
+div.autorelleno ul li {
+list-style-type:none;
+display:block;
+margin:0;
+padding:2px;
+height:18px;
+cursor:pointer;
+}
+#cuerpo{
+position:absolute;
+width:37%;
+top: 25%;
+left:30%;
+background:#F0EDE0;
+}
+b.rtop, b.rbottom{
+display:block;
+background: #FFF
+}
+b.rtop b, b.rbottom b{
+display:block;
+height: 1px;
+overflow: hidden;
+background: #F0EDE0
+}
+b.r1{
+margin: 0 5px
+}
+b.r2{
+margin: 0 3px
+}
+b.r3{
+margin: 0 2px
+}
+b.rtop b.r4, b.rbottom b.r4{
+margin: 0 1px;
+height: 2px
+}

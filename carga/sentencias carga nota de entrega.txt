@@ -1,0 +1,86 @@
+INSERT INTO `tbl_itemsolicitud` (`id`, `cod_sol`, `cod_libro`, `titulo`, `cantidad`, `costo`, `total`, `cantdist`) VALUES
+(1, 'SMLS1', '0287000045', 'LA INVENCION DEL PUEBLO', 1, 26.4, 26.4, 1);
+
+$proxsolicitud="SMLS".$nextsol;
+
+INSERT INTO `tbl_itemsolicitud` (`cod_sol`, `cod_libro`, `titulo`, `cantidad`, `costo`, `total`, `cantdist`) VALUES
+('$proxsolicitud', '0287000045', 'LA INVENCION DEL PUEBLO', 1, 26.4, 26.4, 1);
+
+
+INSERT INTO `tbl_solicitud` (`codigo`, `fecha`, `fecha_entrega`, `fecha_venc`, `fecha_vencconsig`, `proveedor`, `canttotal`, `totalcancelar`, `condicion`, `formapago`, `incluidapor`, `estatus`, `correlativo`) VALUES
+('$proxsolicitud', '$fecha_1', '$fechaCorta', '2010-09-08', '2010-09-30', 1, '$cantidad_libros', '$total_cancelar', 3, 2, 165, 0, '$nextsol')
+
+
+INSERT INTO `tbl_solicitud` (`id`, `codigo`, `fecha`, `fecha_entrega`, `fecha_venc`, `fecha_vencconsig`, `proveedor`, `canttotal`, `totalcancelar`, `condicion`, `formapago`, `incluidapor`, `estatus`, `correlativo`) VALUES
+(2, 'SMLS1', '2010-06-01 00:00:00', '2010-06-01', '2010-09-08', '2010-09-30', 1, 8, 151.2, 3, 2, 165, 17, 1);
+
+INSERT INTO `tbl_solicitud` (`codigo`, `fecha`, `fecha_entrega`, `fecha_venc`, `fecha_vencconsig`, `proveedor`, `canttotal`, `totalcancelar`, `condicion`, `formapago`, `incluidapor`, `estatus`, `correlativo`) VALUES ('SMLS1060', '2011-01-26 00:00:00', '2011-01-26', '2010-09-08', '2010-09-30', 1, '5', '151.2', 3, 2, 165, 0, '1060')
+
+
+$sql_insitemsol="INSERT INTO `tbl_itemsolicitud` (`cod_sol`, `cod_libro`, `titulo`, `cantidad`, `costo`, `total`, `cantdist`) VALUES
+				('$proxsolicitud', '$renglon[0]', '$renglon[1]', '$renglon[6]', '$costo', '$total', '$renglon[7]')";
+
+$sql_insitemsol="INSERT INTO `tbl_itemsolicitud` (`cod_sol`, `cod_libro`, `titulo`, `cantidad`, `costo`, `total`, `cantdist`) VALUES
+				('$proxsolicitud', '$cod_libro', '$titulo', '$cantidad', '$costo', '$total', '$cantdist')";
+
+$sql_notaentrega="SELECT DISTINCT (nota), tbl_sucursal.sucursalFROM `tbl_notase` , tbl_sucursal
+WHERE nota = ('$nota_entrega' AND tbl_notase.sucursal = tbl_sucursal.id_sucursal"
+$result_notaentrega = mysql_query($sql_notaentrega, $db);
+$nf_notaentrega=mysql_num_rows($result_notaentrega);
+if($nf_notaentrega>1)
+{
+	while ($row_notaentrega=mysql_fetch_array($result_notaentrega))
+	{
+		sucursal=$row_notaentrega[1];
+	}
+	echo "La nota de entrega".$nota_entrega. " ya fue cargada a ".$sucusal." elija otra nota";
+}
+else
+{
+	while ($row_notaentrega=mysql_fetch_array($result_notaentrega))
+	{
+		$id_notaentrega=$row_notaentrega['id_notaentrega'];
+	}	
+}
+			
+
+
+
+INSERT INTO `tbl_notase` (`nota`, `cod_libro`, `cantidad`, `precio`, `condicion`, `sucursal`) VALUES
+('$nota_entrega', '$cod_libro', '$cantdist', '$precio_unitario', 3, '$id_sucursal');
+
+
+CREATE TABLE IF NOT EXISTS `tbl_notase` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nota` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `cod_libro` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` double NOT NULL,
+  `condicion` int(11) NOT NULL,
+  `sucursal` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=42 ;
+
+
+
+
+INSERT INTO `tbl_distinventario` (`cod_producto`, `isbn`, `cod_barra`, `autor`, `descripcion`, `editorial`, `tomo`, `presentacion`, `sucursal`, `condicion`, `cantidad`, `descuento`, `FECHA_NOTA_ENTREGA`) VALUES
+('0001000001', '9802763438', '9802763438', 'ADOLFO BIOY CASARES', 'LA INVENCION DE MOREL. PLAN DE EVASION. LA TRAMA CELESTE', 'FUNDACION BIBLIOTECA AYACUCHO            ', '221', 'R', 0000, 0000000001, 150, 0, '2011-10-20 13:50:31');
+
+
+INSERT INTO `tbl_distinventario` (`cod_producto`, `isbn`, `cod_barra`, `autor`, `descripcion`, `editorial`, `tomo`, `presentacion`, `sucursal`, `condicion`, `cantidad`, `descuento`, `FECHA_NOTA_ENTREGA`) VALUES
+(
+'0001000001',
+ '9802763438',
+ '9802763438', 
+'ADOLFO BIOY CASARES', 
+'LA INVENCION DE MOREL. PLAN DE EVASION. LA TRAMA CELESTE', 
+'FUNDACION BIBLIOTECA AYACUCHO', 
+'221', 
+'R', 
+0000, 
+0000000001, 
+150, 
+0, 
+'2011-10-20 13:50:31'
+);

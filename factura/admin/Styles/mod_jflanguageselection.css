@@ -1,0 +1,24 @@
+DIV.jflanguageselection {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FLOAT: right; PADDING-BOTTOM: 2px; VERTICAL-ALIGN: middle; PADDING-TOP: 3px
+}
+UL.jflanguageselection {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 9px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+UL.jflanguageselection LI {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 3px; PADDING-LEFT: 1px; FLOAT: left; BACKGROUND-IMAGE: none; MARGIN: 1px; WHITE-SPACE: nowrap
+}
+UL.jflanguageselection LI A {
+	DISPLAY: block; FONT-SIZE: 9px
+}
+UL.jflanguageselection IMG {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+#jflanguageselection {
+	FLOAT: right; VERTICAL-ALIGN: middle
+}
+SELECT.jflanguageselection {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: #cccccc 1px solid; COLOR: #c64934; PADDING-TOP: 0px; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: arial, helvetica, sans-serif
+}
+LABEL.jflanguageselection {
+	LEFT: -3000px; POSITION: absolute
+}
